@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context="com.oneupsquad.mediadisplay.MainActivity">
+    <RelativeLayout
+        android:id="@+id/mainWindow"
+        android:layout_width="0dp"
+        android:layout_weight="0.8"
+        android:layout_height="match_parent">
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/sideWindow"
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-</android.support.constraint.ConstraintLayout>
+        <AnalogClock
+            android:id="@+id/analogClock"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_centerHorizontal="true" />
+
+        <TextClock
+            android:id="@+id/textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/analogClock"
+            android:layout_centerHorizontal="true"
+            android:elevation="1dp"
+            android:format24Hour="dd.MM.yyyy   HH:mm"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</LinearLayout>
