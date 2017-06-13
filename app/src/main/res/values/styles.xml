@@ -52,19 +52,23 @@
     </style>
 
     <style name="CalendarGridView" parent="CaldroidDefaultGridView">
-        <item name="android:background">@color/colorSecondary2</item>
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
-    <style name="CalendarCell" parent="CaldroidDefaultCell">
-        <item name="android:textColor">@color/cell_text_color_dark</item>
-        <item name="android:background">@drawable/cell_bg_dark</item>
+    <style name="CalendarDefaultCell">
+        <item name="android:textColor">@drawable/calendar_cell_txtcolor</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">5dp</item>
     </style>
 
-    <style name="CalendarNormalCell" parent="CaldroidDefaultDarkCell">
-        <item name="android:padding">4dp</item>
+    <style name="CalendarNormalCell" parent="CalendarDefaultCell">
     </style>
 
-    <style name="CalendarSquareCell" parent="CaldroidDefaultDarkCell" />
+    <style name="CalendarSquareCell" parent="CalendarDefaultCell">
+        <item name="android:background">@drawable/calendar_cell</item>
+    </style>
 
     <style name="CalendarWeekday">
         <item name="android:textColor">@color/colorPrimary1</item>

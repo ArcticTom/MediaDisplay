@@ -33,13 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
         final SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
 
-        // Setup caldroid fragment
-        // **** If you want normal CaldroidFragment, use below line ****
-        //caldroidFragment = new CaldroidFragment();
-
-        // //////////////////////////////////////////////////////////////////////
-        // **** This is to show customized fragment. If you want customized
-        // version, uncomment below line ****
 		 caldroidFragment = new CustomCalendarFragment();
 
         // Setup arguments
@@ -53,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         args.putBoolean(CaldroidFragment.DISABLE_DATES, false);
         args.putBoolean(CaldroidFragment.SELECTED_DATES, false);
         args.putInt(CaldroidFragment.START_DAY_OF_WEEK, CaldroidFragment.MONDAY);
-        args.putBoolean(CaldroidFragment.SQUARE_TEXT_VIEW_CELL, false);
+        args.putBoolean(CaldroidFragment.SQUARE_TEXT_VIEW_CELL, true);
         args.putInt(CaldroidFragment.THEME_RESOURCE, R.style.Calendar);
 
         caldroidFragment.setArguments(args);
@@ -219,19 +212,15 @@ public class MainActivity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
 
         // Min date is last 7 days
-        cal.add(Calendar.DATE, -7);
+        cal.add(Calendar.DATE, -3);
         Date blueDate = cal.getTime();
 
         // Max date is next 7 days
         cal = Calendar.getInstance();
-        cal.add(Calendar.DATE, 7);
+        cal.add(Calendar.DATE, 2);
         Date greenDate = cal.getTime();
 
         if (caldroidFragment != null) {
-            ColorDrawable primary = new ColorDrawable(ContextCompat.getColor(getApplicationContext(),R.color.colorPrimary1));
-            ColorDrawable secondary = new ColorDrawable(ContextCompat.getColor(getApplicationContext(),R.color.colorSecondary1));
-            caldroidFragment.setBackgroundDrawableForDate(primary, blueDate);
-            caldroidFragment.setBackgroundDrawableForDate(secondary, greenDate);
             caldroidFragment.setTextColorForDate(R.color.colorAccent, blueDate);
             caldroidFragment.setTextColorForDate(R.color.colorAccent, greenDate);
         }

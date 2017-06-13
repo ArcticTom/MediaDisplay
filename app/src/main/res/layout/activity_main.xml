@@ -25,30 +25,15 @@
             android:layout_height="110dp"
             android:layout_centerHorizontal="true" />
 
-        <TextClock
-            android:id="@+id/textClock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/analogClock"
-            android:layout_centerHorizontal="true"
-            android:elevation="1dp"
-            android:format24Hour="dd.MM.yyyy   HH:mm"
-            android:shadowColor="@android:color/black"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="2"
-            android:textColor="@color/colorPrimary1"
-            android:textSize="14sp" />
-
         <LinearLayout
             android:id="@+id/calendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textClock"
+            android:layout_below="@+id/analogClock"
             android:orientation="vertical"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="11dp"
-            android:layout_marginRight="11dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="@android:color/transparent"/>
 
 
