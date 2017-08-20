@@ -9,10 +9,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:fullBackupContent="@xml/my_backup_rules">
-        <activity android:name=".MainActivity"><intent-filter>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape">
+            <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter></activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

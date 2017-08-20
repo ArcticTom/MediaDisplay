@@ -58,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
         t.replace(R.id.calendar, caldroidFragment);
         t.commit();
 
+        FragmentTransaction w = getSupportFragmentManager().beginTransaction();
+        w.replace(R.id.weather_fragment, new WeatherFragment());
+        w.commit();
+
+
         // Setup listener
         final CaldroidListener listener = new CaldroidListener() {
 
@@ -205,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         */
+
     }
 
 

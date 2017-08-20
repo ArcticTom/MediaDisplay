@@ -5,12 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     tools:context="com.oneupsquad.mediadisplay.MainActivity">
+
     <RelativeLayout
         android:id="@+id/mainWindow"
         android:layout_width="0dp"
         android:layout_weight="0.8"
         android:layout_height="match_parent">
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/sideWindow"
         android:layout_width="0dp"
@@ -23,19 +25,27 @@
             android:id="@+id/analogClock"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-5dp" />
 
         <LinearLayout
             android:id="@+id/calendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/analogClock"
+            android:layout_below="@+id/weather_fragment"
             android:orientation="vertical"
             android:layout_marginTop="0dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@android:color/transparent"/>
 
+        <FrameLayout
+            android:id="@+id/weather_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/analogClock"
+            android:layout_marginBottom="5dp"
+            android:background="@android:color/transparent" />
 
     </RelativeLayout>
 
