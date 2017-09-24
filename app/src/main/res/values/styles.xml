@@ -39,6 +39,7 @@
 
     <style name="CalendarViewLayout">
         <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_height">150dp</item>
     </style>
 
     <style name="CalendarMonthName" parent="CaldroidDefaultMonthName">
@@ -53,6 +54,7 @@
 
     <style name="CalendarGridView" parent="CaldroidDefaultGridView">
         <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_height">150dp</item>
     </style>
 
     <style name="CalendarDefaultCell">

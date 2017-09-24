@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,45 +8,88 @@
 
     <RelativeLayout
         android:id="@+id/mainWindow"
-        android:layout_width="0dp"
-        android:layout_weight="0.8"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="false" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/sideWindow"
-        android:layout_width="0dp"
-        android:layout_weight="0.2"
+        android:layout_width="256dp"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
 
         <AnalogClock
             android:id="@+id/analogClock"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="-5dp" />
 
         <LinearLayout
             android:id="@+id/calendar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="220dp"
             android:layout_below="@+id/weather_fragment"
-            android:orientation="vertical"
-            android:layout_marginTop="0dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@android:color/transparent"/>
+            android:layout_marginTop="0dp"
+            android:orientation="vertical" />
 
         <FrameLayout
             android:id="@+id/weather_fragment"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="80dp"
             android:layout_below="@+id/analogClock"
             android:layout_marginBottom="5dp"
             android:background="@android:color/transparent" />
 
+        <RelativeLayout
+            android:id="@+id/task_bar"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/calendar"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/task_header"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="6dp"
+                android:text="Tasks"
+                android:textColor="@color/colorPrimary1" />
+
+            <ImageButton
+                android:id="@+id/task_add"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/add" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/task_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/task_bar"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:background="@android:color/transparent" />
+
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

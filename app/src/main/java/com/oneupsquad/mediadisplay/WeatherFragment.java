@@ -58,7 +58,7 @@ public class WeatherFragment extends Fragment {
         updateWeatherData(start, end);
     }
 
-    private void updateWeatherData(final String start, final String end) {
+    public void updateWeatherData(final String start, final String end) {
         new Thread() {
             public void run() {
                 final NodeList xml = FetchWeatherData.getXMLData(getActivity(), start, end);
@@ -75,7 +75,7 @@ public class WeatherFragment extends Fragment {
                         public void run() {
                             renderWeather(xml);
                             Toast.makeText(getActivity(),
-                                    "Weather Success", Toast.LENGTH_SHORT)
+                                    "Weather updated", Toast.LENGTH_SHORT)
                                     .show();
                         }
                     });
