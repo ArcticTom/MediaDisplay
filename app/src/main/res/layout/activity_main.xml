@@ -69,7 +69,11 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="6dp"
                 android:text="Tasks"
-                android:textColor="@color/colorPrimary1" />
+                android:textColor="@color/colorPrimary1"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2" />
 
             <ImageButton
                 android:id="@+id/task_add"
@@ -78,7 +82,11 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:background="@drawable/add" />
+                android:background="@drawable/add"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2" />
         </RelativeLayout>
 
         <ListView

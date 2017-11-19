@@ -6,13 +6,18 @@
     android:orientation="horizontal"
     android:layout_marginBottom="5dp">
 
-    <TextView
+    <Button
         android:id="@+id/weather_icon"
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:textSize="50sp"
-        android:textColor="@color/colorPrimary1" />
+        android:textColor="@color/colorPrimary1"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:background="@color/caldroid_transparent" />
 
     <LinearLayout
         android:id="@+id/weatherDetails"
@@ -27,7 +32,11 @@
             android:gravity="bottom"
             android:text="20 C"
             android:textSize="20sp"
-            android:textColor="@color/colorPrimary1" />
+            android:textColor="@color/colorPrimary1"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2" />
 
         <TextView
             android:id="@+id/wind"
@@ -36,7 +45,11 @@
             android:gravity="center_vertical"
             android:text="5 m/s"
             android:textSize="20sp"
-            android:textColor="@color/colorPrimary1" />
+            android:textColor="@color/colorPrimary1"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2" />
 
     </LinearLayout>
 

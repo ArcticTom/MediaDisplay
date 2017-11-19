@@ -1,5 +1,6 @@
 package com.oneupsquad.mediadisplay;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +29,7 @@ public class WeatherFragment extends Fragment {
 
     TextView temperature;
     TextView wind;
-    TextView weatherIcon;
+    Button weatherIcon;
 
     Handler handler;
 
@@ -41,7 +43,16 @@ public class WeatherFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.weather_fragment, container, false);
         temperature = (TextView) rootView.findViewById(R.id.temperature);
         wind = (TextView) rootView.findViewById(R.id.wind);
-        weatherIcon = (TextView) rootView.findViewById(R.id.weather_icon);
+        weatherIcon = (Button) rootView.findViewById(R.id.weather_icon);
+
+        weatherIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClassName("com.oneupsquad.mediadisplay", "com.oneupsquad.mediadisplay.WebViewActivity");
+                startActivity(intent);
+            }
+        });
 
         weatherIcon.setTypeface(weatherFont);
         return rootView;
@@ -50,6 +61,7 @@ public class WeatherFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         weatherFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/weathericons-regular.otf");
         Date currentTime = Calendar.getInstance().getTime();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:'00:00Z'");
